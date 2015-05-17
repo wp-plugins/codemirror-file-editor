@@ -1,20 +1,21 @@
-(function() {
+(function () {
     var requireJsConfig = cmfe.requireJsConfig,
         codeMirrorConfig = cmfe.codeMirrorConfig,
         scripts = cmfe.scripts;
 
     codeMirrorConfig.extraKeys = {
-        'F11': function(cm) {
+        'F11': function (cm) {
             cm.setOption('fullScreen', !cm.getOption('fullScreen'));
         },
-        'Esc': function(cm) {
-            if (cm.getOption('fullScreen')) cm.setOption('fullScreen', false);
+        'Esc': function (cm) {
+            if (cm.getOption('fullScreen'))
+                cm.setOption('fullScreen', false);
         }
     };
 
     require.config(requireJsConfig);
 
-    require(scripts, function(CodeMirror) {
+    require(scripts, function (CodeMirror) {
         var textarea = document.getElementById('newcontent'),
             height = textarea.offsetHeight,
             template = document.getElementById('template'),
@@ -26,14 +27,12 @@
         wrapper.appendChild(cm.getWrapperElement());
         template.parentNode.insertBefore(wrapper, template);
 
-        template.addEventListener('submit', function() {
+        template.addEventListener('submit', function () {
             scrollto.value = cm.getScrollInfo().top;
         });
 
         cm.setSize(null, height);
         cm.refresh();
         cm.scrollTo(0, scrollto.value);
-
-        console.log('cm', cm);
     });
 })();

@@ -15,6 +15,18 @@ Replaces defaults WordPress Theme and Plugin Editors with [CodeMirror](http://co
 == Installation ==
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to Appearance/Plugins → Editor
+
+== Frequently Asked Questions ==
+
+= How to enable fullscreen mode?
+
+Press F11
+
+== Screenshots ==
+
+1. Theme Editor
+2. Plugin Editor
 
 == Changelog ==
 
