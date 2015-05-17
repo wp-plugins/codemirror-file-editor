@@ -19,7 +19,7 @@ Replaces defaults WordPress Theme and Plugin Editors with [CodeMirror](http://co
 
 == Frequently Asked Questions ==
 
-= How to enable fullscreen mode?
+= How to enable fullscreen mode? =
 
 Press F11
 
