@@ -4,12 +4,13 @@
         scripts = cmfe.scripts;
 
     codeMirrorConfig.extraKeys = {
-        'F11': function (cm) {
-            cm.setOption('fullScreen', !cm.getOption('fullScreen'));
-        },
+        'Ctrl-Space': 'autocomplete',
         'Esc': function (cm) {
             if (cm.getOption('fullScreen'))
                 cm.setOption('fullScreen', false);
+        },
+        'F11': function (cm) {
+            cm.setOption('fullScreen', !cm.getOption('fullScreen'));
         }
     };
 

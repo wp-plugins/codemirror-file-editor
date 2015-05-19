@@ -3,7 +3,7 @@
 Plugin Name: CodeMirror File Editor
 Description: Replace default theme and plugin editor with CodeMirror
 Author: Viacheslav Zavoruev
-Version: 1.0.0
+Version: 1.1.0
 License: GPLv2 or later
 */
 
@@ -16,13 +16,13 @@ function cmfe_admin_enqueue_scripts( $hook ) {
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	$mode = null;
 
-	wp_register_style( 'codemirror', plugins_url( 'codemirror/lib/codemirror.css', __FILE__ ) );
-	wp_register_style( 'cmfe', plugins_url( 'plugin.css', __FILE__ ), array( 'codemirror' ) );
+	wp_register_style( 'codemirror', plugins_url( 'codemirror/lib/codemirror.css', __FILE__ ), null, '5.2.0' );
+	wp_register_style( 'cmfe', plugins_url( 'plugin.css', __FILE__ ), array( 'codemirror' ), null, '1.1.0' );
 
 	wp_enqueue_style( 'cmfe' );
 
-	wp_register_script( 'requirejs', plugins_url( "require$suffix.js", __FILE__ ) );
-	wp_register_script( 'cmfe', plugins_url( 'plugin.js', __FILE__ ), array( 'requirejs' ) );
+	wp_register_script( 'requirejs', plugins_url( "require$suffix.js", __FILE__ ), null, '2.1.17' );
+	wp_register_script( 'cmfe', plugins_url( 'plugin.js', __FILE__ ), array( 'requirejs' ), '1.1.0' );
 
 	$scripts = array(
 		'lib/codemirror',
@@ -39,7 +39,9 @@ function cmfe_admin_enqueue_scripts( $hook ) {
 
 				array_push( $scripts,
 					'addon/edit/closebrackets',
-					'addon/edit/matchbrackets'
+					'addon/edit/matchbrackets',
+					'addon/hint/show-hint',
+					'addon/hint/css-hint'
 				);
 				break;
 
@@ -50,7 +52,11 @@ function cmfe_admin_enqueue_scripts( $hook ) {
 					'addon/edit/closebrackets',
 					'addon/edit/closetag',
 					'addon/edit/matchbrackets',
-					'addon/edit/matchtags'
+					'addon/edit/matchtags',
+					'addon/hint/show-hint',
+					'addon/hint/css-hint',
+					'addon/hint/html-hint',
+					'addon/hint/javascript-hint'
 				);
 				break;
 
@@ -59,7 +65,9 @@ function cmfe_admin_enqueue_scripts( $hook ) {
 
 				array_push( $scripts,
 					'addon/edit/closetag',
-					'addon/edit/matchtags'
+					'addon/edit/matchtags',
+					'addon/hint/show-hint',
+					'addon/hint/javascript-hint'
 				);
 				break;
 

@@ -30,5 +30,8 @@ Press F11
 
 == Changelog ==
 
+= 1.1.0 =
+* Standard autocomplete HTML, JavaScript & CSS
+
 = 1.0.0 =
 * Initial release
