@@ -30,6 +30,10 @@ Press F11
 
 == Changelog ==
 
+= 1.1.1 =
+* CodeMirror 5.4
+* RequireJS 2.1.18
+
 = 1.1.0 =
 * Standard autocomplete HTML, JavaScript & CSS
 
