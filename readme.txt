@@ -30,6 +30,11 @@ Press F11
 
 == Changelog ==
 
+= 1.1.2 =
+* WordPress 4.3 compatibility
+* CodeMirror 5.6
+* RequireJS 2.1.20
+
 = 1.1.1 =
 * CodeMirror 5.4
 * RequireJS 2.1.18
