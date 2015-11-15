@@ -30,6 +30,10 @@ Press F11
 
 == Changelog ==
 
+= 1.2.0 =
+* CodeMirror 5.8
+* Search/replace [plugins](http://codemirror.net/demo/search.html) added
+
 = 1.1.2 =
 * WordPress 4.3 compatibility
 * CodeMirror 5.6
